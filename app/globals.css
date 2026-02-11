@@ -202,29 +202,112 @@ body {
 .header::before {
   content: '';
   position: absolute;
-  top: -40px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.18), rgba(126, 34, 206, 0.08) 40%, transparent 70%);
+  transform: translate(-50%, -55%);
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  box-shadow:
+    0 0 15px rgba(139, 92, 246, 0.15),
+    0 0 30px rgba(139, 92, 246, 0.08),
+    inset 0 0 15px rgba(139, 92, 246, 0.1);
   pointer-events: none;
   z-index: -1;
-  animation: logoGlow 4s ease-in-out infinite;
+  animation: ringPulse1 4s ease-in-out infinite;
 }
 
-@keyframes logoGlow {
+.header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(168, 85, 247, 0.25);
+  box-shadow:
+    0 0 20px rgba(168, 85, 247, 0.12),
+    0 0 40px rgba(126, 34, 206, 0.06),
+    inset 0 0 20px rgba(168, 85, 247, 0.08);
+  pointer-events: none;
+  z-index: -1;
+  animation: ringPulse2 4s ease-in-out infinite 0.5s;
+}
+
+/* Outer rings via logo wrapper */
+.logo-ring-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-ring-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow:
+    0 0 25px rgba(99, 102, 241, 0.08),
+    inset 0 0 25px rgba(99, 102, 241, 0.05);
+  animation: ringPulse3 5s ease-in-out infinite 1s;
+}
+
+.logo-ring-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid rgba(147, 51, 234, 0.08);
+  box-shadow: 0 0 30px rgba(147, 51, 234, 0.04);
+  animation: ringPulse3 6s ease-in-out infinite 1.5s;
+}
+
+@keyframes ringPulse1 {
 
   0%,
   100% {
-    opacity: 0.8;
-    transform: translateX(-50%) scale(1);
+    opacity: 0.6;
+    transform: translate(-50%, -55%) scale(1);
   }
 
   50% {
     opacity: 1;
-    transform: translateX(-50%) scale(1.08);
+    transform: translate(-50%, -55%) scale(1.04);
+  }
+}
+
+@keyframes ringPulse2 {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translate(-50%, -55%) scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -55%) scale(1.06);
+  }
+}
+
+@keyframes ringPulse3 {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.03);
   }
 }
 
