@@ -147,16 +147,14 @@ function Page({ children }) {
             <div className="app-container">
                 <div className="content-wrapper">
                     <header className="header">
-                        <div className="logo-ring-wrapper">
-                            <Image
-                                src="/hackbells-logo.png"
-                                alt="Hackbells 3.0"
-                                width={120}
-                                height={120}
-                                className="logo-img"
-                                priority
-                            />
-                        </div>
+                        <Image
+                            src="/hackbells-logo.png"
+                            alt="Hackbells 3.0"
+                            width={180}
+                            height={180}
+                            className="logo-img"
+                            priority
+                        />
                         <div className="header-badge">🔒 Certificate Verification</div>
                         <p className="header-subtitle">
                             Official verification portal for Hackbells 3.0 workshop certificates
