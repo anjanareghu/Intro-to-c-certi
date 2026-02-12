@@ -150,8 +150,8 @@ function Page({ children }) {
                         <Image
                             src="/hackbells-logo.png"
                             alt="Hackbells 3.0"
-                            width={450}
-                            height={450}
+                            width={250}
+                            height={250}
                             className="logo-img"
                             priority
                         />
